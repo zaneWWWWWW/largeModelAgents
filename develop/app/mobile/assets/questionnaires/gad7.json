@@ -1,0 +1,29 @@
+{
+  "name": "GAD-7",
+  "version": "1.0",
+  "items": [
+    {"id": "gad7_q1", "text": "感到紧张、焦虑或急切？",
+     "options": [{"label": "从不", "score": 0}, {"label": "好几天", "score": 1}, {"label": "一半以上的天数", "score": 2}, {"label": "几乎每天", "score": 3}]},
+    {"id": "gad7_q2", "text": "无法停止或控制担忧？",
+     "options": [{"label": "从不", "score": 0}, {"label": "好几天", "score": 1}, {"label": "一半以上的天数", "score": 2}, {"label": "几乎每天", "score": 3}]},
+    {"id": "gad7_q3", "text": "为不同的事情过分担心？",
+     "options": [{"label": "从不", "score": 0}, {"label": "好几天", "score": 1}, {"label": "一半以上的天数", "score": 2}, {"label": "几乎每天", "score": 3}]},
+    {"id": "gad7_q4", "text": "难以放松？",
+     "options": [{"label": "从不", "score": 0}, {"label": "好几天", "score": 1}, {"label": "一半以上的天数", "score": 2}, {"label": "几乎每天", "score": 3}]},
+    {"id": "gad7_q5", "text": "不安，难以静坐？",
+     "options": [{"label": "从不", "score": 0}, {"label": "好几天", "score": 1}, {"label": "一半以上的天数", "score": 2}, {"label": "几乎每天", "score": 3}]},
+    {"id": "gad7_q6", "text": "容易烦躁或易怒？",
+     "options": [{"label": "从不", "score": 0}, {"label": "好几天", "score": 1}, {"label": "一半以上的天数", "score": 2}, {"label": "几乎每天", "score": 3}]},
+    {"id": "gad7_q7", "text": "担心将要发生不好的事情？",
+     "options": [{"label": "从不", "score": 0}, {"label": "好几天", "score": 1}, {"label": "一半以上的天数", "score": 2}, {"label": "几乎每天", "score": 3}]}
+  ],
+  "scoring": {
+    "sum": true,
+    "thresholds": [
+      {"min": 0, "max": 4, "label": "最小"},
+      {"min": 5, "max": 9, "label": "轻度"},
+      {"min": 10, "max": 14, "label": "中度"},
+      {"min": 15, "max": 21, "label": "重度"}
+    ]
+  }
+}
