@@ -10,7 +10,7 @@
 - 异常处理：网络错误、接口失败的统一提示与重试机制。
 
 ## 目录说明
-- `app/`：移动端应用与资源（问卷 JSON 已提供）。
+- `app/`：移动端应用与资源（问卷 JSON 已提供），详见 `app/README.md`。
 - `services/api/`：后端 API 服务骨架（FastAPI）。
 - `deployment/`：一键启动与容器化示例（docker-compose）。
 - `scripts/`：Windows 便捷脚本（虚拟环境与依赖）。
