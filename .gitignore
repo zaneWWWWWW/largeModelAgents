@@ -1,0 +1,65 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.env.*
+logs/
+*.log
+
+# Node/JS
+node_modules/
+dist/
+build/
+
+# Flutter/Android/iOS
+.dart_tool/
+build/
+ios/Pods/
+android/.gradle/
+android/build/
+*.iml
+
+# IDE
+.vscode/
+.idea/
+
+# Data and models
+data/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.jsonl
+*.zip
+*.tar
+*.tar.gz
+*.h5
+*.onnx
+*.ckpt
+*.bin
+*.pt
+model/**/data/
+model/**/checkpoints/
+model/**/outputs/
+develop/services/api/.env
+
+# BaseApp local models and builds
+*.gguf
+develop/baseapp/basemodel/
+develop/**/build/
+develop/baseapp/project/app/build/
+develop/baseapp/project/server/target/
+develop/**/apk/
+
+# Allow committing specific base models
+!develop/baseapp/basemodel/
+!develop/baseapp/basemodel/chat.gguf
+!develop/baseapp/basemodel/judgement.gguf

@@ -1,0 +1,2 @@
+develop/baseapp/basemodel/chat.gguf filter=lfs diff=lfs merge=lfs -text
+develop/baseapp/basemodel/judgement.gguf filter=lfs diff=lfs merge=lfs -text
