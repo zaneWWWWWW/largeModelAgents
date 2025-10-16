@@ -1,4 +1,23 @@
-# 心理评测模型（Assessment Model）
+# Assessment Model
+
+This directory contains training and inference for mental health status judgement and questionnaire scoring/categorization.
+
+## Directory
+- `configs/`: model and scoring related configurations.
+- `training/`: training scripts.
+- `evaluation/`: evaluation metrics and scripts.
+- `inference/`: inference and service adaptation.
+- `data/`: data directory (gitignored).
+
+## Run Examples
+```bash
+python training/train.py --config configs/default.yaml
+python evaluation/evaluate.py --config configs/default.yaml
+```
+
+---
+
+# 心理评测模型（中文）
 
 本目录用于心理健康状态判断与量表评分/分级的训练与推理。
 

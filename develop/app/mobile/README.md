@@ -1,4 +1,23 @@
-# 移动端应用（占位）
+# Mobile App (placeholder)
+
+Recommended tech stacks:
+- Flutter (recommended for consistent cross-platform UX and mature ecosystem), or
+- React Native (if the team is more familiar with RN).
+
+## Target Features
+- Counseling chat: safety prompts and risk detection, emotional support and suggestions.
+- Assessments: render instruments (PHQ-9, GAD-7), compute scores and categories.
+- Results display: scores, category, interpretation, and next-step suggestions.
+- Privacy & compliance: local caching, data minimization, emergency help entry.
+
+## Development Notes
+- Consume questionnaire JSON and scoring rules from `assets/questionnaires/`.
+- Integrate with `services/api` endpoints; handle network exceptions and retries.
+- Unify error copy and risk warning copy.
+
+---
+
+# 移动端应用（中文占位）
 
 建议技术栈：
 - Flutter（推荐，跨平台一致性好，生态成熟），或

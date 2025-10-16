@@ -1,4 +1,41 @@
-# 报告提纲（建议稿）
+# Report Outline (Suggested)
+
+## 1. Introduction & Background
+- Importance and challenges of mental health in campus scenarios.
+- Project goals and usage scenarios.
+
+## 2. Related Work & Methods
+- Counseling dialogue systems: current status; safety and empathy research.
+- Psychological assessment instruments (PHQ-9 / GAD-7, etc.) and score interpretation.
+
+## 3. System Architecture & Design
+- Overall architecture, data flow, modularization, and deployment options.
+- Privacy protection and ethical compliance design.
+
+## 4. Models & Data
+- Data sources, annotation, and cleaning.
+- Training approaches for counseling and assessment models; hyperparameters and loss functions.
+- Evaluation metrics and experimental setup.
+
+## 5. Mobile App
+- Feature design, interaction flow, and questionnaire rendering.
+- Input validation and risk warning design.
+
+## 6. Experiments & Results
+- Dialogue quality, user satisfaction, assessment accuracy, etc.
+- Ablation studies and error analysis.
+
+## 7. Deployment & Operations
+- Performance, stability, and monitoring.
+- Update strategies and rollback mechanisms.
+
+## 8. Conclusion & Outlook
+- Limitations and future work.
+- Promotion and collaboration opportunities in campus settings.
+
+---
+
+# 报告提纲（中文建议稿）
 
 ## 1. 引言与背景
 - 心理健康在高校场景的重要性与挑战。

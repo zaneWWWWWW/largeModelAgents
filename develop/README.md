@@ -1,4 +1,91 @@
-# 开发组 App 需求与实现指南
+# App Development Guide
+
+This guide consolidates App-side requirements and integration agreements, covering Client (user-facing) and Admin modules, on-device models, data privacy, and server-side deployment.
+
+## Goals & Scope
+- Tech stack: determined by the dev team (Flutter, React Native, native Android, etc.).
+- Platform compatibility: minimum Android (Android-only is acceptable).
+- Client modules: User (AI counseling, questionnaires, profile) and Admin (questionnaire publishing & processing).
+- Server deployment: App backend needs to be deployed on a cloud server (e.g., Aliyun ECS).
+
+## Client Features (User)
+- AI counseling
+  - Use on-device model `basemodel/chat.gguf` for dialogue generation.
+  - During counseling, use on-device `basemodel/judgement.gguf` to assess psychological state in real time (local-only).
+  - Store session data locally (privacy-preserving); support user clearing and export if needed.
+- Psychological questionnaires
+  - Render standard instruments (e.g., PHQ-9, GAD-7), compute scores, and display results.
+  - Upload questionnaire results to the server for backend statistics and admin viewing.
+- Profile center
+  - Preferences, privacy notice, emergency help entry.
+  - Local data management: view and clear chat logs and model judgement results.
+
+## Admin Features
+- Questionnaire publishing
+  - Create, update, and retire questionnaires (questions, options, scoring rules, visibility scope).
+- Questionnaire processing
+  - View submitted results and statistics reports.
+  - Export data (CSV/JSON) and provide basic filtering/aggregation.
+
+## On-device Models & Directory
+- Model files are placed under `develop/baseapp/basemodel/`
+  - Dialogue model: `chat.gguf`
+  - Psychological state judgement model: `judgement.gguf`
+- Both models run on-device; do not upload raw dialogues or judgement results without user authorization.
+- Recommended integration in the App project:
+  - Copy/reference `basemodel` into app resources or readable path (e.g., `android/app/src/main/assets/` or app private directory).
+  - Use the corresponding inference library (ggml/gguf wrappers for Java/Kotlin/Flutter/RN) to load `chat.gguf` and `judgement.gguf`.
+
+## BaseApp Overview (develop/baseapp/project)
+- Tech stack: Native Android (Kotlin/Java), Gradle; optional backend (Spring Boot) for questionnaire management and data storage.
+- Modules: AI chat, questionnaires, profile center, basic privacy settings and data cleaning.
+- Project structure: mobile app as the main project; backend enabled as needed and exposed via HTTPS.
+
+## BaseModel Usage in BaseApp (develop/baseapp/basemodel)
+- `chat.gguf`: offline dialogue generation for the counseling module. Load via inference library and produce replies with conversation context.
+- `judgement.gguf`: local-only psychological state tagging during conversations. Results are not uploaded.
+- Deployment: place models in app private directory or `assets`; warm up on first launch to avoid first-turn delay.
+- Performance & resources: watch model size and memory usage; optionally provide "light/standard" profiles and let users choose in settings.
+
+## Data & Privacy
+- Local storage (privacy-preserving)
+  - Chat data: local-only, support one-click clearing; not uploaded by default.
+  - Psychological state assessment (model judgement): local-only, not uploaded by default.
+- Server-side storage
+  - Questionnaire results: must be uploaded to the server for statistics and admin viewing.
+- Recommendations: local encryption (SQLite/file), explicit privacy notice, data minimization, and offline mode that does not hinder basic use.
+
+## Server & Deployment
+- Deployment: cloud server (e.g., Aliyun ECS) with HTTPS and basic security groups.
+- Reference backend: `develop/services/api` (FastAPI skeleton, extendable for questionnaire management and result storage).
+- Basics:
+  - App uses `BASE_URL` pointing to the cloud address (e.g., `https://your-domain.example/`).
+  - Questionnaire endpoints:
+    - `GET /questionnaires`: fetch published questionnaires with content.
+    - `POST /assessment/submit`: submit questionnaire results; server persists.
+  - Chat and psychological state judgement are performed on-device; if cloud fallback is needed, evaluate separately with a feature toggle.
+
+## API Agreements (initial version aligned with this repo)
+- Determined by the dev team.
+
+## Compatibility
+- Minimum platform: Android.
+
+## Acceptance Criteria
+- User side:
+  - Counseling: dialogue generation and local psychological judgement work properly.
+  - Questionnaires: correct rendering and scoring; results uploaded successfully and visible on admin side.
+  - Profile center: privacy notice and data clearing entry available.
+- Admin side:
+  - Publishing workflow is smooth; APIs and frontend integrate properly.
+  - Results page can view and export statistics.
+- Security & privacy:
+  - Local data is not uploaded by default; HTTPS and auth strategies work (if needed).
+  - Clear privacy policy and user consent flow.
+
+---
+
+# 开发组 App 需求与实现指南（中文）
 
 本指南汇总 App 侧的明确需求与对接约定，覆盖用户端（Client）与管理端（Admin），以及端侧模型、数据隐私与服务端部署要求。
 
@@ -36,6 +123,17 @@
   - 将 `basemodel` 目录复制/引用到 App 的资源或可读路径（例如 `android/app/src/main/assets/` 或应用私有目录）。
   - 使用对应的推理库（如 ggml/gguf 的 Java/Kotlin/Flutter/RN 封装）加载 `chat.gguf` 与 `judgement.gguf`。
 
+## BaseApp 项目简介（develop/baseapp/project）
+- 技术栈：Android 原生（Kotlin/Java），Gradle 构建；可选集成后端服务（Spring Boot），用于问卷管理与数据存储。
+- 功能模块：AI 咨询聊天、心理问卷、个人中心、基础隐私设置与数据清理。
+- 工程结构：移动端 App 工程为主体；后端工程按需启用并通过 HTTPS 暴露接口。
+
+## BaseModel 在 BaseApp 中的用途（develop/baseapp/basemodel）
+- `chat.gguf`：提供离线对话生成能力，用于 AI 咨询模块。通过相应推理库加载，结合对话上下文产生回复。
+- `judgement.gguf`：在聊天过程中进行用户心理状态的本地判断与标签，仅本地使用，不上传原始结果。
+- 部署建议：将模型放置在应用私有目录或 `assets`，首次启动可进行模型加载预热，避免首轮对话延迟。
+- 性能与资源：关注模型体积与内存占用，必要时提供“轻量/标准”两档配置，允许用户在设置中选择。
+
 ## 数据与隐私
 - 本地存储（隐私保护）
   - 聊天数据：仅本地保存，支持用户一键清理；默认不上传。
@@ -59,7 +157,6 @@
 
 ## 兼容性
 - Android 为最低兼容平台。
-
 
 ## 验收标准
 - 用户端：

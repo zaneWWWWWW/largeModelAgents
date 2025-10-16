@@ -1,4 +1,58 @@
-# BaseApp（技术参考）
+# BaseApp (Technical Reference)
+
+This directory hosts your previously developed AI Agent App as a technical reference and migration starting point.
+
+## Import Suggestions
+- If you already have a repository: copy code into this directory or add it as a submodule.
+- Keep the following key modules for reference:
+  - Routing and navigation structure (pages and flow)
+  - State management (sessions, questionnaires, settings)
+  - Network layer (API calls, error handling, retry strategy)
+  - Local storage (caching and privacy clearing)
+
+## Integration Notes
+- Adjust API base URL and protocols to integrate with `develop/services/api`.
+- Use unified questionnaire JSON from `develop/app/assets/questionnaires/`.
+- Follow privacy & security guidance in `docs/architecture.md` and the top-level README.
+
+## Next Steps
+- After the dev team chooses the tech stack, scaffold the actual project under `app/`.
+- Migrate reusable modules from BaseApp to the new project (components, services, utilities, etc.).
+
+---
+
+## Paths
+- Project path: `develop/baseapp/project`
+- Local models: `develop/baseapp/basemodel` (contains `chat.gguf` and `judgement.gguf`)
+
+## Run Guide (Brief)
+### Android App
+1. Open `develop/baseapp/project` (Android Studio or CLI).
+2. Build via CLI:
+   - Windows: `cd develop/baseapp/project && .\gradlew.bat assembleDebug`
+   - Output: `app\build\outputs\apk\debug\app-debug.apk`
+3. Adjust backend address: set `BASE_URL` to `http://localhost:8000/` (or your server address) in `ApiClient` or related constants.
+4. If using on-device inference: place `chat.gguf` and `judgement.gguf` in an app-readable location (e.g., `app/src/main/assets`) and configure load paths in code.
+
+### Backend (optional in legacy project)
+- Path: `develop/baseapp/project/server`
+- Start: `mvn package` or `mvn spring-boot:run` (port usually `8080`)
+- Recommended unified backend in this repo: `develop/services/api` (FastAPI). If keeping the legacy backend, use it for comparison and reference.
+
+## Integration with This Repo
+- Unify chat and assessment endpoints to `develop/services/api`:
+  - `POST /chat`: `{ user_id, message }` → `{ reply }`
+  - `POST /assessment/submit`: `{ user_id, instrument, answers:int[] }` → `{ score, category }`
+- Questionnaire source: `develop/app/assets/questionnaires/` (PHQ-9, GAD-7 provided).
+- Model paths: for on-device inference, encapsulate model loading service to centralize gguf file paths and versions.
+
+## Data & Privacy
+- Do not commit model files under `basemodel` to remote (top-level `.gitignore` already ignores `*.gguf` and that directory).
+- Do not commit real user data or private configs; build artifacts are ignored.
+
+---
+
+# BaseApp（技术参考，中文）
 
 此目录用于放置你之前开发的 AI Agent App 作为技术参考与迁移起点。
 
@@ -18,8 +72,6 @@
 ## 后续步骤
 - 开发组确定技术栈后，在 `app/` 目录脚手架实际工程。
 - 将 BaseApp 的可复用模块迁移至新工程（组件、服务、工具函数等）。
-
----
 
 ## 路径定位
 - 项目路径：`develop/baseapp/project`

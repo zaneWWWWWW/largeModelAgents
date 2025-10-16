@@ -1,4 +1,31 @@
-# 系统架构（初版）
+# System Architecture (Initial)
+
+## Overview
+- Mobile App: provides dialogues, assessment, result display, and safety guidance.
+- Backend API: unified ingress layer handling session routing, assessment endpoints, and risk control policies.
+- Model layer:
+  - Counseling model (dialogue): generates safe, empathetic, and helpful responses.
+  - Assessment model (scoring/classification): computes instrument scores and categories.
+- Deployment: a combination of on-device, edge, or cloud; choose based on resources and compliance.
+
+## Data Flow
+1. The App sends user inputs and questionnaire answers to the backend via API.
+2. The backend routes to the appropriate model inference or assessment logic.
+3. Returns dialogue replies or instrument scores/categories, and records necessary anonymous audit info.
+
+## Privacy & Risk Control
+- Data minimization: collect/store only when necessary.
+- Sensitive data de-identification and encryption; configure emergency help and risk warning mechanisms.
+- Rate limiting and input validation on both client and backend.
+
+## Deployment Options
+- On-device inference: low latency and privacy-friendly, limited by device compute and package size.
+- Edge/cloud: easier updates and centralized management; high availability but strict data and compliance control required.
+- Mix by module: on-device assessment and cloud-based counseling (or vice versa) depending on resources and UX.
+
+---
+
+# 系统架构（中文）
 
 ## 总览
 - 移动端 App：提供对话、量表测评、结果展示与安全指引。

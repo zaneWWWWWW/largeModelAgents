@@ -1,4 +1,22 @@
-# 行为准则（Code of Conduct）
+# Code of Conduct
+
+We strive to foster an open, respectful, and inclusive collaboration environment.
+
+## Basic Principles
+- Respect each other; do not engage in personal attacks or discriminatory remarks.
+- Communicate honestly, provide proactive feedback, and surface risks in a timely manner.
+- Be highly mindful of privacy and data security; comply with applicable laws and university policies.
+
+## Issue Handling
+- Maintain a constructive attitude in discussions and code reviews.
+- If conflicts or inappropriate behavior arise, contact the team lead to coordinate resolution.
+
+## Scope
+- All collaboration channels of this project (repository, issues, PRs, chat groups, meetings, etc.).
+
+---
+
+# 行为准则（中文）
 
 我们致力于创造一个开放、尊重、包容的协作环境：
 

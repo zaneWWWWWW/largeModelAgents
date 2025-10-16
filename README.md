@@ -1,5 +1,37 @@
 # largeModelAgents
-This repository, called largeModelAgents, is a team project for the combinatorics course.
+
+largeModelAgents is a team project for the combinatorics course. It delivers a student-oriented mobile AI Agent for psychological counseling and assessment. This repository uses a monorepo structure to coordinate model training, backend services, mobile app, and documentation.
+
+## Project Goals (based on the App design)
+- AI counseling: Use on-device `basemodel/chat.gguf` to generate dialogues, and `basemodel/judgement.gguf` to locally assess the user’s psychological state (privacy-preserving).
+- Psychological questionnaires: Render standard instruments (e.g., PHQ-9, GAD-7), compute scores, and display results. Upload questionnaire results to the cloud for admin-side processing and statistics.
+- Profile center: Privacy notice, preferences, and data cleaning entry to ensure the user controls local data (chat logs and assessment results).
+- Admin: Publish and process questionnaires (view, statistics, export) with smooth data interaction with the App.
+- Deployment & platform: Deploy App-side services on a cloud server (e.g., Aliyun ECS). Minimum platform: Android.
+- Teaching & collaboration: Improve engineering practices, AI knowledge, documentation, collaboration, and team coordination.
+
+## Repository Structure (top-level)
+- `develop/`: Development directory including the mobile App, backend services, deployment scripts, and cloud integration notes.
+- `docs/`: Documentation and reports for architecture descriptions and coursework.
+- `model/`: Model code for counseling and assessment training, inference, and evaluation.
+
+## Team Division Mapping
+- Model training: Zane Wang, Classmate A — data preparation, training/evaluation, on-device/server-side inference.
+- App development & deployment: Classmate B, Classmate C — user/admin app features, model integration, cloud deployment.
+- Documentation: Classmate D — architecture docs and course report authoring/maintenance.
+
+## Compliance & Privacy
+- Do not collect personally identifiable information unless necessary and with explicit consent.
+- Minimize storage of session and assessment data; support anonymization and de-identification.
+- Provide risk reminders and emergency support guidance (in App UI and backend policy).
+
+## Collaboration
+- See `CONTRIBUTING.md` for commit standards and branching strategy.
+- Store large datasets/model files externally or via LFS; do not check them into the repo.
+
+---
+
+# largeModelAgents（中文）
 面向学生用户的移动端心理咨询与心理评测 AI Agent 项目。本仓库采用单仓库（monorepo）结构，支持模型训练、后端服务、移动端应用与报告编写的协同开发。
 
 ## 项目目标（基于 App 功能设计）
@@ -19,7 +51,6 @@ This repository, called largeModelAgents, is a team project for the combinatoric
 - 模型训练：Zane Wang、同学A。负责模型数据准备、训练与评估，以及端侧/服务端推理方案。
 - App 开发与部署：同学B、同学C。App 负责用户端与管理端实现、端侧模型集成与云端部署。
 - 文档撰写：同学D 负责架构文档与课程报告的编写与维护。
-
 
 ## 合规与隐私
 - 不收集可识别信息（如学号/身份证）除非必要并获明确同意。

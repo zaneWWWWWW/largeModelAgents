@@ -1,4 +1,20 @@
-# 后端 API 服务（FastAPI 骨架）
+# Backend API Service (FastAPI skeleton)
+
+## Quick Start
+```bash
+cd develop/services/api
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+Health check: `http://localhost:8000/health`
+
+## Environment Variables
+Copy `.env.example` to `.env` and modify as needed.
+
+---
+
+# 后端 API 服务（中文说明）
 
 ## 快速运行
 ```bash

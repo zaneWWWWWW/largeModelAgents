@@ -1,4 +1,36 @@
-# 贡献指南（Contributing）
+# Contributing
+
+To ensure effective and high-quality collaboration, please follow these guidelines.
+
+## Branching Strategy
+- `main`: Only merge reviewed PRs; do not push directly.
+- Feature branch naming:
+  - Model: `model/<counseling|assessment>-<feature>`
+  - App: `app/mobile-<feature>`
+  - Service: `service/api-<feature>`
+  - Docs: `docs/<topic>`
+
+## Commit Messages (Conventional Commits recommended)
+- Format: `<type>(scope): <subject>`
+- Common types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`
+- Example: `feat(api): add assessment endpoint with scoring`
+
+## PR Process
+- Describe the background and motivation of changes; link related issues if any.
+- Checklist: code runs, basic checks pass, no sensitive information.
+- At least one peer review; team lead merges if needed.
+
+## Code & Dependencies
+- Python code follows PEP8; optionally use `ruff/black` (formatting workflow may be added later).
+- Do not commit large datasets or model weights; use external storage or Git LFS.
+
+## Security & Privacy
+- Do not commit real user data to the repository or remote.
+- Do not commit local `.env` files (already in `.gitignore`).
+
+---
+
+# 贡献指南（中文）
 
 为保证多人协作的效率与质量，请遵循以下约定。
 
@@ -11,7 +43,7 @@
   - 文档：`docs/<topic>`
 
 ## 提交信息（Conventional Commits 推荐）
-- 格式：`<type>(scope): <subject>` 
+- 格式：`<type>(scope): <subject>`
 - 常见 type：`feat`、`fix`、`docs`、`refactor`、`test`、`chore`
 - 示例：`feat(api): add assessment endpoint with scoring`
 
