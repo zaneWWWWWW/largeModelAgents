@@ -1,0 +1,40 @@
+pluginManagement {
+    repositories {
+        // 国内镜像优先
+        maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin/") }
+        // 二级镜像（华为云）
+        maven { url = uri("https://repo.huaweicloud.com/repository/maven/") }
+        // 备用官方源
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+    // 关键：将 Kotlin 插件解析到 kotlin-gradle-plugin 工件，绕过插件门户标记解析
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "org.jetbrains.kotlin.android" ||
+                requested.id.id == "org.jetbrains.kotlin.jvm" ||
+                requested.id.id == "org.jetbrains.kotlin.kapt" ||
+                requested.id.id == "org.jetbrains.kotlin.plugin.serialization") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        // 国内镜像优先（阿里云）
+        maven { url = uri("https://maven.aliyun.com/repository/public/") }
+        maven { url = uri("https://maven.aliyun.com/repository/google/") }
+        // 二级镜像（华为云）
+        maven { url = uri("https://repo.huaweicloud.com/repository/maven/") }
+        // 备用官方源
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "projectV3"
+include ':app'

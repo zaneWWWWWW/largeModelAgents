@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/CMakeFiles/llama-populate"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/CMakeFiles/llama-populate.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/CMakeFiles/llama-populate-complete.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-build.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-configure.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-download.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-install.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-mkdir.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-patch.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-test.rule"
+		},
+		{
+			"file" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/armeabi-v7a/_deps/llama-subbuild/llama-populate-prefix/src/llama-populate-stamp/llama-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"llama-populate"
+		],
+		"name" : "llama-populate"
+	}
+}

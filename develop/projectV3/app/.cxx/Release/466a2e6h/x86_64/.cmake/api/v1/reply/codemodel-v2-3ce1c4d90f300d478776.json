@@ -1,0 +1,245 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "_deps/llama-build",
+					"childIndexes" : 
+					[
+						2,
+						5,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.llama-build-Release-9fd55e40315f6df3797c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/x86_64/_deps/llama-src"
+				},
+				{
+					"build" : "_deps/llama-build/ggml",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.llama-build.ggml-Release-258db7e8c618be11c9b0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/x86_64/_deps/llama-src/ggml"
+				},
+				{
+					"build" : "_deps/llama-build/ggml/src",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.llama-build.ggml.src-Release-3c37fc439bf801c9e6b9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/x86_64/_deps/llama-src/ggml/src",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4
+					]
+				},
+				{
+					"build" : "_deps/llama-build/ggml/src/ggml-cpu",
+					"jsonFile" : "directory-_deps.llama-build.ggml.src.ggml-cpu-Release-45782a711ae634dc8840.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 2,
+					"source" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/x86_64/_deps/llama-src/ggml/src/ggml-cpu"
+				},
+				{
+					"build" : "_deps/llama-build/src",
+					"jsonFile" : "directory-_deps.llama-build.src-Release-df2c78a9e706c2b8d5f1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/x86_64/_deps/llama-src/src",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "_deps/llama-build/common",
+					"jsonFile" : "directory-_deps.llama-build.common-Release-1bd30a0ea983389db9d4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/x86_64/_deps/llama-src/common",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "llama-android",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						5,
+						6
+					],
+					"name" : "llama.cpp",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"name" : "ggml",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 6,
+					"id" : "build_info::@52a65ce15c198c168a2a",
+					"jsonFile" : "target-build_info-Release-12f2afd6074b4e38c8fc.json",
+					"name" : "build_info",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "common::@52a65ce15c198c168a2a",
+					"jsonFile" : "target-common-Release-938a248be23e847a28d5.json",
+					"name" : "common",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ggml::@5dca07ab0e77b5af6ddc",
+					"jsonFile" : "target-ggml-Release-81c358acf56ecaee9d12.json",
+					"name" : "ggml",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ggml-base::@5dca07ab0e77b5af6ddc",
+					"jsonFile" : "target-ggml-base-Release-0765bd4fb5db24d93e1f.json",
+					"name" : "ggml-base",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ggml-cpu::@5dca07ab0e77b5af6ddc",
+					"jsonFile" : "target-ggml-cpu-Release-6cdea123ec9f8c509fd4.json",
+					"name" : "ggml-cpu",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "llama::@af043c1aa1ae7f9d767d",
+					"jsonFile" : "target-llama-Release-873bd5018d9221ed4000.json",
+					"name" : "llama",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "llama-android::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-llama-android-Release-5b5df86c72fd33fa95e2.json",
+					"name" : "llama-android",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/QQ/projectV3/projectV3/projectV3/app/.cxx/Release/466a2e6h/x86_64",
+		"source" : "E:/QQ/projectV3/projectV3/projectV3/app/src/main/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
