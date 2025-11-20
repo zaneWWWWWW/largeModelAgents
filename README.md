@@ -17,8 +17,8 @@ largeModelAgents is a team project for the combinatorics course. It delivers a s
 
 ## Team Division Mapping
 - Model training: Zane Wang, Echo Zhou — data preparation, training/evaluation, on-device/server-side inference.
-- App development & deployment: Classmate B, Classmate C — user/admin app features, model integration, cloud deployment.
-- Documentation: Classmate D — architecture docs and course report authoring/maintenance.
+- App development & deployment: Quan Xu, Zane Wang, Yuji Zou — user/admin app features, model integration, cloud deployment.
+- Documentation: ZhenDong Niu —  course report authoring/maintenance.
 
 ## Compliance & Privacy
 - Do not collect personally identifiable information unless necessary and with explicit consent.
@@ -49,8 +49,8 @@ largeModelAgents is a team project for the combinatorics course. It delivers a s
 
 ## 团队分工映射
 - 模型训练：Zane Wang、Echo Zhou 负责数据准备、模型训练与评估，以及端侧/服务端推理方案。
-- App 开发与部署：同学B、同学C 负责用户端与管理端实现、端侧模型集成与云端部署。
-- 文档撰写：同学D 负责架构文档与课程报告的编写与维护。
+- App 开发与部署：Quan Xu、Zane Wang、Yuji Zou 负责用户端与管理端实现、端侧模型集成与云端部署。
+- 文档撰写：Zhendong Niu 负责课程报告的编写与维护。
 
 ## 合规与隐私
 - 不收集可识别信息（如学号/身份证）除非必要并获明确同意。
