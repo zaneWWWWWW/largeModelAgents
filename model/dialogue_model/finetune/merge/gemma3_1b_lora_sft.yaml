@@ -1,0 +1,8 @@
+model_name_or_path: /root/autodl-tmp/Qwen/Gemma
+adapter_name_or_path: saves/gemma3-1b/lora/sft
+template: gemma
+trust_remote_code: true
+export_dir: output/gemma3_1b_lora_sft
+export_size: 5
+export_device: cpu
+export_legacy_format: false

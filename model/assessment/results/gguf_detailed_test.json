@@ -1,0 +1,46 @@
+{
+  "model_type": "gguf",
+  "model_path": "models/mindchat-qwen2-05b-merged-gguf/model-q4_km.gguf",
+  "results": [
+    {
+      "case": 1,
+      "prompt": "我最近感到很沮丧，不知道该怎么办。",
+      "response": "很抱歉听到你的困扰。让我们一起探索一下原因。",
+      "inference_time": "0.147s",
+      "tokens": 12,
+      "tokens_per_second": "81.83"
+    },
+    {
+      "case": 2,
+      "prompt": "考试压力很大，失眠了好几天。",
+      "response": "很抱歉听到你的困扰。让我们先谈谈具体情况。",
+      "inference_time": "0.107s",
+      "tokens": 12,
+      "tokens_per_second": "112.17"
+    },
+    {
+      "case": 3,
+      "prompt": "与室友关系紧张，感到很孤独。",
+      "response": "这听起来像是你在人际交往方面遇到困扰。你希望改善这种状况吗？",
+      "inference_time": "0.138s",
+      "tokens": 17,
+      "tokens_per_second": "123.34"
+    },
+    {
+      "case": 4,
+      "prompt": "最近学习压力很大，总是担心考试不及格。",
+      "response": "听起来你正在经历很大的焦虑。你可以先分享一下具体的压力源吗？",
+      "inference_time": "0.138s",
+      "tokens": 16,
+      "tokens_per_second": "116.01"
+    },
+    {
+      "case": 5,
+      "prompt": "我感到很焦虑，不知道如何缓解。",
+      "response": "看起来你正在经历一些压力。你能具体说一下你的困扰吗？",
+      "inference_time": "0.124s",
+      "tokens": 15,
+      "tokens_per_second": "120.71"
+    }
+  ]
+}

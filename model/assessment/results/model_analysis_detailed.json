@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-11-25T19:47:57.137074",
+  "best_model": {
+    "key": "mindchat-qwen2-05b",
+    "name": "MindChat-Qwen2-0.5B",
+    "base_model": "X-D-Lab/MindChat-Qwen2-0_5B",
+    "eval_loss": 0.07332411408424377,
+    "eval_runtime": 35.8249,
+    "eval_samples_per_second": 26.881,
+    "eval_steps_per_second": 3.378
+  },
+  "all_models_ranking": [
+    {
+      "rank": 1,
+      "model_key": "mindchat-qwen2-05b",
+      "model_name": "MindChat-Qwen2-0.5B",
+      "eval_loss": 0.07332411408424377,
+      "eval_runtime": 35.8249,
+      "eval_samples_per_second": 26.881,
+      "eval_steps_per_second": 3.378
+    },
+    {
+      "rank": 2,
+      "model_key": "qwen15-05b",
+      "model_name": "Qwen1.5-0.5B",
+      "eval_loss": 0.07334141433238983,
+      "eval_runtime": 35.484,
+      "eval_samples_per_second": 27.139,
+      "eval_steps_per_second": 3.41
+    },
+    {
+      "rank": 3,
+      "model_key": "qwen25-05b",
+      "model_name": "Qwen2.5-0.5B",
+      "eval_loss": 0.07577410340309143,
+      "eval_runtime": 38.4366,
+      "eval_samples_per_second": 25.054,
+      "eval_steps_per_second": 3.148
+    }
+  ]
+}

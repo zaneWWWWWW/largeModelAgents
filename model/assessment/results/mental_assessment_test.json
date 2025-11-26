@@ -1,0 +1,86 @@
+{
+  "model_type": "gguf",
+  "model_path": "models/mindchat-qwen2-05b-merged-gguf/model-q4_km.gguf",
+  "results": [
+    {
+      "case": 1,
+      "conversation": "user: 我最近感到很沮丧，不知道该怎么办。\nuser: 学习压力很大，总是担心考试不及格。\nuser: 晚上经常失眠，白天也没有精神。",
+      "expected": "应该检测到抑郁和焦虑症状",
+      "raw_response": "depression_level(0-3)",
+      "json_result": {
+        "depression_level": 0,
+        "anxiety_level": 0,
+        "risk_flag": "none",
+        "student_distress_score": 0
+      },
+      "validation_error": null,
+      "inference_time": "0.274s",
+      "tokens": 8,
+      "tokens_per_second": "29.24"
+    },
+    {
+      "case": 2,
+      "conversation": "user: 考试压力很大，失眠了好几天。\nuser: 总是担心考不好，影响我的未来。\nuser: 心跳加速，手心出汗。",
+      "expected": "应该检测到焦虑症状",
+      "raw_response": "depression_level(0-3)",
+      "json_result": {
+        "depression_level": 0,
+        "anxiety_level": 0,
+        "risk_flag": "none",
+        "student_distress_score": 0
+      },
+      "validation_error": null,
+      "inference_time": "0.210s",
+      "tokens": 8,
+      "tokens_per_second": "38.11"
+    },
+    {
+      "case": 3,
+      "conversation": "user: 与室友关系紧张，感到很孤独。\nuser: 不想去上课，也不想和任何人交流。\nuser: 觉得生活没有意义。",
+      "expected": "应该检测到抑郁症状",
+      "raw_response": "{\"depression_level\": 0, \" Anxiety_level\": 0, \" risk_flag\": 0, \"student_distress_score\": 0}",
+      "json_result": {
+        "depression_level": 0,
+        "anxiety_level": 0,
+        "risk_flag": "none",
+        "student_distress_score": 0
+      },
+      "validation_error": "risk_flag无效，已设置为none",
+      "inference_time": "0.332s",
+      "tokens": 31,
+      "tokens_per_second": "93.46"
+    },
+    {
+      "case": 4,
+      "conversation": "user: 最近学习压力很大，总是担心考试不及格。\nuser: 虽然有点紧张，但还能正常学习和生活。",
+      "expected": "轻度焦虑，无风险",
+      "raw_response": "depression_level(0-3)",
+      "json_result": {
+        "depression_level": 0,
+        "anxiety_level": 0,
+        "risk_flag": "none",
+        "student_distress_score": 0
+      },
+      "validation_error": null,
+      "inference_time": "0.204s",
+      "tokens": 8,
+      "tokens_per_second": "39.13"
+    },
+    {
+      "case": 5,
+      "conversation": "user: 我觉得活着没有意义，想结束这一切。\nuser: 有时候会想伤害自己。",
+      "expected": "应该检测到高风险标志",
+      "raw_response": "风险_flag:自杀",
+      "json_result": {
+        "risk_flag": "suicidal",
+        "depression_level": 0,
+        "anxiety_level": 0,
+        "student_distress_score": 0
+      },
+      "validation_error": null,
+      "inference_time": "0.087s",
+      "tokens": 4,
+      "tokens_per_second": "46.00"
+    }
+  ]
+}

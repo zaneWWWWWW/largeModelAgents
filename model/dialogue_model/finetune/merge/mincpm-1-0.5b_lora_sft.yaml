@@ -1,0 +1,8 @@
+model_name_or_path: /root/autodl-tmp/Qwen/MiniCPM-1-0.5B
+adapter_name_or_path: saves/minicpm-0_5b/lora/sft
+template: qwen
+trust_remote_code: true
+export_dir: output/minicpm_0_5b_lora_sft
+export_size: 5
+export_device: cpu
+export_legacy_format: false

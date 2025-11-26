@@ -1,0 +1,11 @@
+{
+  "student_mental_sft": {
+    "file_name": "sft_student_mental.jsonl",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}

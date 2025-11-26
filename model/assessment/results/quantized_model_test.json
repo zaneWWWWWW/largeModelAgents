@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-11-26T13:35:37.136752",
+  "pytorch_model": null,
+  "gguf_model": {
+    "model_type": "gguf",
+    "model_path": "models/mindchat-qwen2-05b-merged-gguf/model-q4_km.gguf",
+    "results": [
+      {
+        "case": 1,
+        "prompt": "我最近感到很沮丧，不知道该怎么办。",
+        "response": "",
+        "inference_time": "0.05s",
+        "tokens": 0
+      },
+      {
+        "case": 2,
+        "prompt": "考试压力很大，失眠了好几天。",
+        "response": "",
+        "inference_time": "0.02s",
+        "tokens": 0
+      },
+      {
+        "case": 3,
+        "prompt": "与室友关系紧张，感到很孤独。",
+        "response": "",
+        "inference_time": "0.02s",
+        "tokens": 0
+      }
+    ]
+  },
+  "summary": {}
+}
