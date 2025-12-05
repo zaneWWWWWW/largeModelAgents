@@ -1,0 +1,52 @@
+### Brain LLM 训练配置 ###
+### 目标：训练一个 0.5B 的工具路由决策模型 ###
+
+### 模型配置 ###
+model_name_or_path: /home/zanewang/projects/fine-tuning/models/Qwen/Qwen2___5-0___5B-Instruct
+trust_remote_code: true
+
+### 微调方法 ###
+stage: sft
+do_train: true
+finetuning_type: lora
+
+### LoRA 配置 ###
+lora_target: all
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+
+### 数据集配置 ###
+dataset: brain_training_data_v2
+template: qwen
+cutoff_len: 1024
+max_samples: 10000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### 输出配置 ###
+output_dir: ../output/Qwen2.5-0.5B-Brain/lora/sft
+logging_steps: 10
+save_steps: 100
+save_total_limit: 3
+overwrite_output_dir: true
+
+### 训练参数 ###
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 4
+learning_rate: 3.0e-4
+num_train_epochs: 5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+
+### 验证配置 ###
+val_size: 0.1
+per_device_eval_batch_size: 4
+eval_strategy: steps
+eval_steps: 50
+
+### 其他 ###
+report_to: none
+

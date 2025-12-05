@@ -1,0 +1,158 @@
+# ====================
+# Android / Gradle
+# ====================
+
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle files
+.gradle/
+build/
+*/build/
+**/build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
+*.log
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
+**/.cxx/
+
+# Android Profiling
+*.hprof
+
+# ====================
+# Model Files (Large)
+# ====================
+*.gguf
+*.bin
+*.safetensors
+*.pth
+*.pt
+*.onnx
+*.pb
+*.h5
+*.keras
+*.ckpt
+*.ckpt.*
+
+# Model directories
+**/models/*.gguf
+**/assets/models/
+oldmodels/
+
+# ====================
+# Sensitive Files
+# ====================
+
+# Signing keys
+*.jks
+*.keystore
+apk/
+
+# Configuration files with sensitive information
+**/application.yml
+**/application.properties
+**/application-*.yml
+**/application-*.properties
+!**/application.example.yml
+!**/application.example.properties
+
+# API Keys
+*.env
+.env.*
+
+# ====================
+# Spring Boot / Maven
+# ====================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ====================
+# IDE
+# ====================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# ====================
+# OS generated files
+# ====================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ====================
+# Temporary files
+# ====================
+*.tmp
+*.temp
+*.swp
+*~
+
+# ====================
+# Python (for model training)
+# ====================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+*.egg
+
+# ====================
+# Large files
+# ====================
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Large model save directories
+saves/
+checkpoints/
+
+# ====================
+# Large data files (>50MB)
+# ====================
+model/rawdata/clean/PSYQA.jsonl
+model/rawdata/original/Chinese-Psychological-QA-DataSet-master/data/ques_ans/
+model/rawdata/original/Chinese-Psychological-QA-DataSet-master/data/ques_ans.zip
+

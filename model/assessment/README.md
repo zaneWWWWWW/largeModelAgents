@@ -1,24 +1,143 @@
-# Fine-Tuning Project for Student Mental Health Chatbot
+# 心理状态评估模型
 
-This repository contains the code, data, and models for a fine-tuned language model designed to act as a supportive chatbot for student mental health.
+用于心理状态评估的微调模型，输出 JSON 格式的心理评估结果。
 
-## Directory Structure
+## 📖 项目简介
 
-- `LLaMA-Factory-main/`: The core fine-tuning framework used for this project.
-- `data/`: Contains the dataset used for fine-tuning.
-  - `datasets/sft_student_mental.jsonl`: The instruction-based dataset for supervised fine-tuning.
-- `models/`: Contains the quantized model ready for inference.
-  - `mindchat-qwen2-05b-merged-gguf/`: The GGUF-quantized model for efficient deployment.
-- `saves/`: Contains the fine-tuned model weights (adapters).
-  - `mindchat-qwen2-05b/`: The LoRA adapter weights from the fine-tuning process.
-- `docs/`: Project documentation.
-  - `finetune_plan.md`: The initial plan for the fine-tuning experiment.
-  - `steps.md`: Detailed steps taken during the project.
-  - `README.md`: The original project README.
-- `logs/`: Training logs.
+该模型用于评估用户的心理状态，基于对话内容输出结构化的评估结果，包括：
+- 抑郁程度评估
+- 焦虑程度评估
+- 风险等级标记
+- 困扰分数
 
-## How to Use
+## 📁 目录结构
 
-1.  **Setup**: Follow the instructions in `LLaMA-Factory-main/README.md` to set up the environment.
-2.  **Inference**: Use the provided GGUF model in `models/` with a compatible runner like `llama.cpp` for fast inference.
-3.  **Reproduce Training**: To reproduce the training, place the `sft_student_mental.jsonl` dataset in the `LLaMA-Factory-main/data` directory and use the LoRA weights in `saves/` as a starting point or retrain using the provided scripts and logs as a reference.
+```
+assessment/
+├── data/                           # 数据目录
+│   ├── datasets/                   # 训练数据集
+│   │   ├── train/                  # 训练集
+│   │   ├── valid/                  # 验证集
+│   │   ├── test/                   # 测试集
+│   │   └── metadata/               # 元数据
+│   ├── processed/                  # 处理后数据
+│   └── README.md
+├── docs/                           # 技术文档
+│   ├── finetune_plan.md            # 微调计划
+│   ├── steps.md                    # 实验步骤
+│   ├── EXPORT_QUANTIZE_GUIDE.md    # 导出量化指南
+│   ├── QUANTIZATION_SUMMARY.md     # 量化总结
+│   └── label_system.md             # 标注体系说明
+├── labeling/                       # 数据标注
+│   ├── scripts/                    # 标注脚本
+│   │   ├── run_labeling.py         # 主标注脚本
+│   │   ├── split_jsonl.py          # 数据分割
+│   │   ├── provider_*.py           # 各LLM提供者
+│   │   └── common.py               # 公共函数
+│   ├── prompts/                    # 标注提示词
+│   │   └── min_instruction.txt
+│   └── README.md
+├── scripts/                        # 训练与测试脚本
+│   ├── train_llf_*.sh              # 各种训练脚本
+│   ├── test_*.py                   # 测试脚本
+│   ├── merge_lora.py               # 合并LoRA权重
+│   ├── convert_*.sh                # 转换脚本
+│   ├── infer.py                    # 推理脚本
+│   └── json_postprocessor.py       # JSON后处理
+├── saves/                          # 训练保存点
+│   └── mindchat-qwen2-05b/
+│       ├── lora/                   # LoRA权重
+│       └── dora/                   # DoRA权重
+├── results/                        # 实验结果
+│   ├── training_analysis.md
+│   ├── mental_assessment_test.json
+│   └── *.json
+├── logs/                           # 训练日志
+├── LLaMA-Factory-main/             # 训练框架（可选）
+└── README.md
+```
+
+## 🛠️ 技术规格
+
+| 项目 | 规格 |
+|------|------|
+| 基座模型 | Qwen2.5-0.5B-Instruct |
+| 微调方法 | LoRA / DoRA |
+| 训练指标 | train_loss: 0.0812, 3 epochs |
+| 输出格式 | JSON格式心理评估结果 |
+
+## 🚀 快速开始
+
+### 数据标注
+```bash
+cd labeling/scripts
+python run_labeling.py
+```
+
+### 训练模型
+```bash
+cd scripts
+./train_llf_mindchat_qwen2_05b.sh
+```
+
+### 测试模型
+```bash
+python scripts/test_model.py
+```
+
+### 合并权重
+```bash
+python scripts/merge_lora.py
+```
+
+### 转换为 GGUF
+```bash
+./scripts/convert_to_gguf.sh
+```
+
+## 📊 输出示例
+
+输入对话：
+```
+用户：我最近经常失眠，感觉很累，对什么都提不起兴趣。
+```
+
+模型输出：
+```json
+{
+  "depression_level": "moderate",
+  "anxiety_level": "mild",
+  "risk_flag": false,
+  "distress_score": 6,
+  "summary": "用户表现出中度抑郁症状，包括睡眠问题和兴趣缺失"
+}
+```
+
+## 📝 数据标注体系
+
+### 标注维度
+1. **抑郁程度** (depression_level): none / mild / moderate / severe
+2. **焦虑程度** (anxiety_level): none / mild / moderate / severe
+3. **风险标记** (risk_flag): true / false
+4. **困扰分数** (distress_score): 0-10
+
+### 标注流程
+1. 数据清洗：去重、过滤无效样本
+2. 自动标注：使用 LLM API 批量标注
+3. 人工审核：抽样验证标注质量
+4. 格式转换：转为 SFT 训练格式
+
+## 📚 相关文档
+
+- [微调计划](docs/finetune_plan.md)
+- [实验步骤](docs/steps.md)
+- [导出量化指南](docs/EXPORT_QUANTIZE_GUIDE.md)
+- [标注体系说明](docs/label_system.md)
+
+## 🔗 与 App 集成
+
+评估模型在 Android App 中作为 `PsychologicalAssessmentTool` 集成，由 Agent 框架调用进行心理状态评估。
+
+---
+
+**最后更新**: 2025-12

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 小香樟品牌色系 -->
+    <color name="xiangzhang_primary">#66BB6A</color>         <!-- 绿·清新（主色） -->
+    <color name="xiangzhang_primary_dark">#388E3C</color>    <!-- 深主色（状态栏/强调） -->
+    <color name="xiangzhang_primary_light">#A5D6A7</color>   <!-- 浅主色（背景/分割） -->
+
+    <color name="xiangzhang_secondary">#8BC34A</color>       <!-- 次要色（按钮/强调） -->
+    <color name="xiangzhang_secondary_dark">#689F38</color>
+    <color name="xiangzhang_secondary_light">#DCEDC8</color>
+
+    <!-- 语义/背景 -->
+    <color name="background_default">#FAFAFA</color>
+    <color name="divider_light">#E0E0E0</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#666666</color>
+
+    <!-- 气泡背景（保持原先效果，可按需微调） -->
+    <color name="message_background_user">#EEFFDE</color>
+    <color name="message_background_ai">#E3F2FD</color>
+    
+    <!-- 兼容历史命名的颜色（迁移期保留） -->
+    <color name="telegram_blue">@color/xiangzhang_primary</color>
+    <color name="telegram_blue_dark">@color/xiangzhang_primary_dark</color>
+    <color name="telegram_background">@color/background_default</color>
+    <color name="telegram_text_primary">@color/text_primary</color>
+    <color name="telegram_text_secondary">@color/text_secondary</color>
+    <color name="telegram_divider">@color/divider_light</color>
+    <color name="telegram_input_background">@color/xiangzhang_primary_light</color>
+    <color name="telegram_message_background">@color/message_background_user</color>
+    <color name="telegram_message_background_ai">@color/message_background_ai</color>
+    <color name="telegram_text_danger">#FF3B30</color>
+    <color name="telegram_button_primary">@color/xiangzhang_primary</color>
+    <color name="telegram_button_secondary">@color/xiangzhang_secondary</color>
+</resources>

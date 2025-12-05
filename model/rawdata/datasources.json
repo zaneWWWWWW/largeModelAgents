@@ -1,0 +1,21 @@
+[
+    {
+        "name": "CPsyCoun-main",
+        "source": "github",
+        "url": "https://github.com/CAS-SIAT-XinHai/CPsyCoun/tree/main",
+        "clean_path": {
+            "CPsyCounD": ".\\clean\\CPsyCounD.jsonl",
+            "CPsyCounE": ".\\clean\\CPsyCounE.jsonl",
+            "dialogue_count": 3129
+        }
+    },
+    {
+        "name": "Chinese-Psychological-QA-DataSet",
+        "source": "github",
+        "url": "https://github.com/flyrae/Chinese-Psychological-QA-DataSet",
+        "clean_path": {
+            "PSYQA": ".\\clean\\PSYQA.jsonl",
+            "dialogue_count": 246386
+        }
+    }
+]
